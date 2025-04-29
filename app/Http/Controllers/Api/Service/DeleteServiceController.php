@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Dedoc\Scramble\Attributes\Group;
 
+#[Group('Services')]
 class DeleteServiceController extends Controller
 {
     public function __invoke(string $barbershopId, string $serviceId)

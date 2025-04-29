@@ -8,7 +8,9 @@ use App\Http\Resources\ServiceResource;
 use App\Models\Barbershop;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Dedoc\Scramble\Attributes\Group;
 
+#[Group('Services')]
 class CreateServiceController extends Controller
 {
     public function __invoke(CreateServiceRequest $request, string $barbershopId)

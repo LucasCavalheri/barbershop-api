@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\Appointment\UpdateAppointmentRequest;
 use App\Http\Resources\AppointmentResource;
 use App\Models\Appointment;
+use Dedoc\Scramble\Attributes\Group;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
+#[Group('Appointments')]
 class UpdateAppointmentController extends Controller
 {
     public function __invoke(UpdateAppointmentRequest $request, string $appointmentId)

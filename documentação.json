@@ -1,0 +1,740 @@
+type: collection.insomnia.rest/5.0
+name: Barbershop
+meta:
+  id: wrk_0f0a8b563f5343ae950e22c2132e3cae
+  created: 1745858487769
+  modified: 1745858487769
+collection:
+  - name: Auth
+    meta:
+      id: fld_1c208b7e39b94774954d0a5a51d849c7
+      created: 1745858493760
+      modified: 1745858493760
+      sortKey: -1745858493760
+    children:
+      - url: "{{ _.URL }}/auth/register"
+        name: Register
+        meta:
+          id: req_26cd2fa02233420ebbfc9fb64dbea8fa
+          created: 1745858495864
+          modified: 1745885864545
+          isPrivate: false
+          sortKey: -1745858495864
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Lucas",
+            	"email": "lucas@email.com",
+            	"password": "123",
+            	"role": "barber",
+            	"phone": "199999031230"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/auth/login"
+        name: Login
+        meta:
+          id: req_004020e2022a4c8c89ac6a747c2e7a4f
+          created: 1745858627165
+          modified: 1745886668131
+          isPrivate: false
+          sortKey: -1743820113277.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "lucas2@email.com",
+            	"password": "123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Barbershops
+    meta:
+      id: fld_e6c473ee37454d2da451aa94835a7a1b
+      created: 1745858912857
+      modified: 1745858912857
+      sortKey: -1745858912857
+    children:
+      - url: "{{ _.URL }}/barbershops"
+        name: Create Barbershop
+        meta:
+          id: req_f3bb8bb0b7b64304b02294bd71b74228
+          created: 1745858907009
+          modified: 1745865590183
+          isPrivate: false
+          sortKey: -1745858916635
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Barbearia do Corte",
+            	"address": "Rua do Corte, 488",
+            	"phones": [
+            		"19999031230"
+            	]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/barbershops"
+        name: Find All Barbershops
+        meta:
+          id: req_481fe820427848a28c55fdaa3e91beb2
+          created: 1745859486896
+          modified: 1745861263891
+          isPrivate: false
+          sortKey: -1745858706249.5
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/barbershops/1"
+        name: Update Barbershop
+        meta:
+          id: req_33029b9f2b02491caee98f89c470180a
+          created: 1745860131138
+          modified: 1745865597774
+          isPrivate: false
+          sortKey: -1745858706149.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Barbearia do Corte",
+            	"address": "Rua do Corte, 488"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/barbershops/1"
+        name: Delete Barbershop
+        meta:
+          id: req_02c406037b284ece80c4c0ea54659eb0
+          created: 1745860854699
+          modified: 1745873135805
+          isPrivate: false
+          sortKey: -1745858601006.75
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Barbearia do Corte",
+            	"address": "Rua do Corte, 488"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/barbershops/12"
+        name: Get Barbershop
+        meta:
+          id: req_fbef7c881c844505b4cf4ed4aaf84269
+          created: 1745861269841
+          modified: 1745865617304
+          isPrivate: false
+          sortKey: -1745858706199.5
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Services
+    meta:
+      id: fld_d08e00b5723f41c79b8d9163033a511f
+      created: 1745870903940
+      modified: 1745870903940
+      sortKey: -1745870903940
+    children:
+      - url: "{{ _.URL }}/barbershops/1/services"
+        name: Create Service
+        meta:
+          id: req_925e88546aea4d3e86f4c53ffad5efbf
+          created: 1745870910391
+          modified: 1745872327296
+          isPrivate: false
+          sortKey: -1745870913202
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Pézinho",
+            	"duration": 23,
+            	"price": 19.99
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/barbershops/1/services/1"
+        name: Update Service
+        meta:
+          id: req_bd081b8078fd46f7ab5cf82573dbe368
+          created: 1745872685839
+          modified: 1745872840818
+          isPrivate: false
+          sortKey: -1745864914918.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Pzinho",
+            	"duration": 23,
+            	"price": 19.99
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/barbershops/2/services"
+        name: List Barbershop Services
+        meta:
+          id: req_2e9faf80f18948da96f0d32b4b355d1c
+          created: 1745872927905
+          modified: 1745873940455
+          isPrivate: false
+          sortKey: -1745867914060.25
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Pézinho",
+            	"duration": 23,
+            	"price": 19.99
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/barbershops/1/services/1"
+        name: Delete Service
+        meta:
+          id: req_f12533b1f910451bb29b892573762865
+          created: 1745873103228
+          modified: 1745873105305
+          isPrivate: false
+          sortKey: -1745861915776.75
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Pzinho",
+            	"duration": 23,
+            	"price": 19.99
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Opening Hour
+    meta:
+      id: fld_4dd80ae8d05c41439941040ed7a7d49a
+      created: 1745884442947
+      modified: 1745884442947
+      sortKey: -1745884442947
+    children:
+      - url: "{{ _.URL }}/barbershops/1/opening-hours"
+        name: Create Opening Hour
+        meta:
+          id: req_bf44636149c94738997c5f46cc99dbfe
+          created: 1745884451501
+          modified: 1745884467941
+          isPrivate: false
+          sortKey: -1745884453353
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "day_of_week": 1,
+              "opens_at": "09:00",
+              "closes_at": "18:00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/barbershops/1/opening-hours/1"
+        name: Update Opening Hour
+        meta:
+          id: req_2f589f48dcf24316b792f32db61d1700
+          created: 1745884587076
+          modified: 1745884597810
+          isPrivate: false
+          sortKey: -1745877683277.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "day_of_week": 1,
+              "opens_at": "10:00",
+              "closes_at": "18:00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/barbershops/1/opening-hours"
+        name: List Opening Hours
+        meta:
+          id: req_9191c605ebed4c9caa9bbca7cd182fce
+          created: 1745884690707
+          modified: 1745884695124
+          isPrivate: false
+          sortKey: -1745884453453
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/barbershops/1/opening-hours/1"
+        name: Delete Opening Hour
+        meta:
+          id: req_1a7d50eee4f646f69f02313532bbef14
+          created: 1745884790802
+          modified: 1745884793415
+          isPrivate: false
+          sortKey: -1745874298239.75
+        method: DELETE
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Appointment
+    meta:
+      id: fld_3273acfb0d0f4e91bb98d56e3ab30a70
+      created: 1745884818553
+      modified: 1745884818553
+      sortKey: -1745884818553
+    children:
+      - url: "{{ _.URL }}/appointments"
+        name: Create Appointment
+        meta:
+          id: req_77e1abf8e4f345189376eb7044a6d29d
+          created: 1745884812140
+          modified: 1745885747954
+          isPrivate: false
+          sortKey: -1745884885854
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "barbershop_id": 1,
+              "service_id": 1,
+              "start_time": "2025-05-05T14:00:00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/appointments"
+        name: List Appointments
+        meta:
+          id: req_13c292043d354874b1d9b60a5d28b0de
+          created: 1745885774242
+          modified: 1745885780860
+          isPrivate: false
+          sortKey: -1745884669653.5
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/appointments/1"
+        name: Update Appointment
+        meta:
+          id: req_1f28b25e1ba24374b54d38513f14d11e
+          created: 1745886943180
+          modified: 1745886954745
+          isPrivate: false
+          sortKey: -1745884669553.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "barbershop_id": 1,
+              "service_id": 1,
+              "start_time": "2025-05-05T14:00:00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.URL }}/appointments/1"
+        name: Cancel Appointment
+        meta:
+          id: req_6f19f2ab5e374af3977cc89e2159f2ba
+          created: 1745887001037
+          modified: 1745887007368
+          isPrivate: false
+          sortKey: -1745884561503.25
+        method: DELETE
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_a61c5703ca684f5d940113ffe6170055
+          - id: pair_f2c0aa4fc2a84561b5592292b0df2fec
+            name: Accept
+            value: application/json
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.TOKEN }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_78faa7f6d6db972c8f9c90c519b69a1fa1396078
+    created: 1745858487779
+    modified: 1745858487779
+environments:
+  name: Base Environment
+  meta:
+    id: env_78faa7f6d6db972c8f9c90c519b69a1fa1396078
+    created: 1745858487774
+    modified: 1745858893481
+    isPrivate: false
+  data:
+    URL: http://localhost:8000/api
+    TOKEN: "{% response 'body', 'req_004020e2022a4c8c89ac6a747c2e7a4f',
+      'b64::JC5kYXRhLnRva2Vu::46b', 'never', 60 %}"

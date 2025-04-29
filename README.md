@@ -58,6 +58,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - **PHP** como linguagem principal.
 - **Laravel** como framework para construção da API.
 - **Sanctum** para autenticação baseada em tokens.
+- **Scramble** para documentação da API.
 
 ## 📦 Pré-requisitos
 
@@ -98,6 +99,7 @@ php artisan serve
 ```
 
 A API estará disponível em `http://localhost:8000/api`.
+A Documentação estará disponível em `http://localhost:8000/docs/api`.
 
 ---
 

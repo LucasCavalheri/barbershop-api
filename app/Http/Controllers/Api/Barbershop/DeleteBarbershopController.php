@@ -7,7 +7,9 @@ use App\Models\Barbershop;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
 use Carbon\Carbon;
+use Dedoc\Scramble\Attributes\Group;
 
+#[Group('Barbershops')]
 class DeleteBarbershopController extends Controller
 {
     public function __invoke(string $id)

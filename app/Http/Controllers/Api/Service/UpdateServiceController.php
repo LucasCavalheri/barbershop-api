@@ -8,7 +8,9 @@ use App\Http\Resources\ServiceResource;
 use App\Models\Service;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Dedoc\Scramble\Attributes\Group;
 
+#[Group('Services')]
 class UpdateServiceController extends Controller
 {
     public function __invoke(UpdateServiceRequest $request, string $barbershopId, string $serviceId)

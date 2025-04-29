@@ -8,7 +8,9 @@ use App\Http\Resources\BarbershopResource;
 use App\Models\Barbershop;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
+use Dedoc\Scramble\Attributes\Group;
 
+#[Group('Barbershops')]
 class UpdateBarbershopController extends Controller
 {
     public function __invoke(UpdateBarbershopRequest $request, string $id)

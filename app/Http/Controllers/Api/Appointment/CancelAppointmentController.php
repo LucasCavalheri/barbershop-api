@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Api\Appointment;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AppointmentResource;
 use App\Models\Appointment;
+use Dedoc\Scramble\Attributes\Group;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
+#[Group('Appointments')]
 class CancelAppointmentController extends Controller
 {
     public function __invoke(string $appointmentId)

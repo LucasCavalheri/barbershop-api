@@ -7,9 +7,14 @@ use App\Http\Requests\Api\Auth\LoginUserRequest;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Dedoc\Scramble\Attributes\Group;
 
+#[Group('Auth')]
 class LoginUserController extends Controller
 {
+    /**
+     * @unauthenticated
+     */
     public function __invoke(LoginUserRequest $request)
     {
         $data = $request->validated();

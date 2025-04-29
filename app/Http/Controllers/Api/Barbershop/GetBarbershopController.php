@@ -6,9 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\BarbershopResource;
 use App\Models\Barbershop;
 use Illuminate\Http\Response;
+use Dedoc\Scramble\Attributes\Group;
 
+#[Group('Barbershops')]
 class GetBarbershopController extends Controller
 {
+    /**
+     * @unauthenticated
+     */
     public function __invoke(string $id)
     {
         $barbershop = $this->findOrFailWithError(Barbershop::class, $id, 'Barbearia não encontrada');

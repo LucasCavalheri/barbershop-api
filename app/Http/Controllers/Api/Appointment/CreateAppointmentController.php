@@ -8,10 +8,12 @@ use App\Http\Resources\AppointmentResource;
 use App\Models\Appointment;
 use App\Models\BarbershopOpeningHour;
 use App\Models\Service;
+use Dedoc\Scramble\Attributes\Group;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 
+#[Group('Appointments')]
 class CreateAppointmentController extends Controller
 {
     public function __invoke(CreateAppointmentRequest $request)

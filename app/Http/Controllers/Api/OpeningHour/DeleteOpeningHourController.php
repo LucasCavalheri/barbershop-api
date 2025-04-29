@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api\OpeningHour;
 use App\Http\Controllers\Controller;
 use App\Models\BarbershopOpeningHour;
 use Illuminate\Http\Response;
+use Dedoc\Scramble\Attributes\Group;
 
+#[Group('Opening Hours')]
 class DeleteOpeningHourController extends Controller
 {
     public function __invoke(string $barbershopId, string $openingHourId)

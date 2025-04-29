@@ -7,7 +7,9 @@ use App\Http\Requests\Api\OpeningHour\UpdateOpeningHourRequest;
 use App\Http\Resources\OpeningHourResource;
 use App\Models\BarbershopOpeningHour;
 use Illuminate\Http\Response;
+use Dedoc\Scramble\Attributes\Group;
 
+#[Group('Opening Hours')]
 class UpdateOpeningHourController extends Controller
 {
     public function __invoke(UpdateOpeningHourRequest $request, string $barbershopId, string $openingHourId)

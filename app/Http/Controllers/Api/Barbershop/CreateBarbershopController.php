@@ -8,7 +8,9 @@ use App\Http\Resources\BarbershopResource;
 use App\Models\Barbershop;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Dedoc\Scramble\Attributes\Group;
 
+#[Group('Barbershops')]
 class CreateBarbershopController extends Controller
 {
     public function __invoke(CreateBarbershopRequest $request)
